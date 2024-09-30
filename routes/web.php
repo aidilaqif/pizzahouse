@@ -7,7 +7,12 @@ Route::get('/', function () {
 });
 
 Route::get('/pizzas', function(){
-    return view('pizzas');
-    // return ("pizza");
-    // return ['name' => 'veg pizzas', 'base' => 'classic'];
+    // get data from db, then pass into array
+    $pizza = [
+        'type' => 'hawaiian',
+        'base' => 'cheesy crust',
+        'price' => 10
+    ];
+    return view('pizzas',$pizza);
+    
 });
