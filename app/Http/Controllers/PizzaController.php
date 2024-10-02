@@ -20,8 +20,8 @@ class PizzaController extends Controller
 
     public function show($id){
     // use the $id variable to query the db for a record
-
-    return view('pizzas.show',['id' => $id]);// pizzas.show referring to file show inside pizzas folder
+    $pizza = Pizza::findOrFail($id); // if exist will show if not 404 not found
+    return view('pizzas.show',['pizza' => $pizza]);// pizzas.show referring to file show inside pizzas folder
     }
 
     public function create(){
