@@ -8,17 +8,8 @@
             Pizza List
         </div>
         
-        
-        {{-- for loop in blade --}}
-        {{-- @for ($i = 0; $i < 5; $i++)
-            <p>the value of i is {{$i}}</p>
-        @endfor --}}
-
-        {{-- @for ($i = 0; $i < count($pizzas); $i++)
-            <p>{{$pizzas[$i]['type']}}</p>
-        @endfor --}}
-
-        {{-- parameter after 'as' can be called whatever we want --}}
+        <p>{{$name}}</p>
+        <p>{{$age}}</p>
         @foreach ($pizzas as $pizza)
             <div>
                 {{$loop -> index}} {{$pizza['type']}} - {{$pizza['base']}}
