@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// route for /pizzas
 Route::get('/pizzas', function(){
     // get data from db, then pass into array
     $pizzas = [
@@ -14,6 +15,13 @@ Route::get('/pizzas', function(){
         ['type' => 'veg supreme', 'base' => 'thin & crispy'],
     ];
 
-    return view('pizzas',['pizzas' => $pizzas]);
+    $name = request('name');
+    
+
+    return view('pizzas',[
+        'pizzas' => $pizzas,
+        'name' => $name,
+        'age' => request('age')//other ways to store the variable
+    ]);
     
 });
