@@ -11,6 +11,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="/css/main.css">
+        @vite(['resources/css/app.css', 'resources/scss/app.scss','resources/scss/main.scss','resources/js/app.js'])
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
         @yield('content')

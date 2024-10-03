@@ -2,19 +2,16 @@
 
 @section('content')
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-            Pizza List
-        </div>
-        
-        {{-- <p>{{$name}}</p> --}}
-        {{-- <p>{{$age}}</p> --}}
+    <div class="wrapper pizza-index">
+        <h1>Pizza Orders</h1>
         @foreach ($pizzas as $pizza)
-            <div>
-               {{$pizza->name}} - {{$pizza->type}} - {{$pizza->base}}
-            </div>
+        <div class="pizza-item">
+            <h4>
+                <img src="/img/pizza.png" alt="pizza icon">
+                <a href="/pizzas/{{$pizza->id}}">{{$pizza->name}}</a>
+            </h4>
+        </div>
         @endforeach
     </div>
-</div>
+
 @endsection
