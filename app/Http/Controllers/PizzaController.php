@@ -7,6 +7,10 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
+    //function to authenticate that will apply to all function
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
     public function index(){
 
 
