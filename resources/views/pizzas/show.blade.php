@@ -15,7 +15,7 @@
         @endforeach
     </ul>
 
-    <form action="/pizzas/{{$pizza->id}}" method="POST">
+    <form action="{{route('pizzas.destroy', $pizza->id)}}" method="POST">
         @csrf
         @method('DELETE') {{--override POST--}}
         <button>Complete Order</button>
