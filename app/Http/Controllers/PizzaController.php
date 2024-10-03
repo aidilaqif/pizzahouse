@@ -24,10 +24,12 @@ class PizzaController extends Controller
     return view('pizzas.show',['pizza' => $pizza]);// pizzas.show referring to file show inside pizzas folder
     }
 
+    //function to create item
     public function create(){
         return view('pizzas.create');
     }
 
+    // function to add item to db
     public function store(){
         
         $pizza = new Pizza();// create instance of pizza model
@@ -43,5 +45,13 @@ class PizzaController extends Controller
         $pizza->save();
 
         return redirect('/')->with('mssg','Thanks for your order');
+    }
+    
+    // function to delete record
+    public function destroy($id){
+        $pizza = Pizza::findOrFail($id);//find based on ID
+        $pizza->delete();
+
+        return redirect('/pizzas');
     }
 }
